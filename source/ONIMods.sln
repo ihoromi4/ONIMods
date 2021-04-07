@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteriesChargeSensor", "BatteriesChargeSensor\BatteriesChargeSensor.csproj", "{D9CD3EA4-6863-47BA-B3D2-103DA754E15C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "^CaiLib", "CaiLib\^CaiLib.csproj", "{2DED5B57-FD32-4F67-88B5-924AC4300952}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9CD3EA4-6863-47BA-B3D2-103DA754E15C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CD3EA4-6863-47BA-B3D2-103DA754E15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CD3EA4-6863-47BA-B3D2-103DA754E15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CD3EA4-6863-47BA-B3D2-103DA754E15C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DED5B57-FD32-4F67-88B5-924AC4300952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DED5B57-FD32-4F67-88B5-924AC4300952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DED5B57-FD32-4F67-88B5-924AC4300952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DED5B57-FD32-4F67-88B5-924AC4300952}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {175BF9CB-1F4B-4E21-BA55-7DD1DDF6D7BC}
+	EndGlobalSection
+EndGlobal

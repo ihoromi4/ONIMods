@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.NAME
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.NAME"
+msgid "<link=\"BATTERIESCHARGESENSOR\">Batteries Charge Sensor</link>"
+msgstr "<link=\"BATTERIESCHARGESENSOR\">Сенсор заряда батарей</link>"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.EFFECT
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.EFFECT"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> or <b><style=\"logic_off\">Red Signal</style></b> when the <link=\"POWER\">energy</link> stored in connected power network reaches specified value."
+msgstr "Отправляет <b><style=\"logic_on\">зеленый сигнал</style></b> или <b><style=\"logic_off\">красный сигнал</style></b>, когда запас <link=\"POWER\">энергии</link>, сохраненной в батареях достигает нужных величин."
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.DESC
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.DESC"
+msgid "Charge sensor measures the energy stored in all batteries connected to the power network and sends logical signal."
+msgstr "Сенсор заряда измеряет энергию, запасенную во всех батареях, подсоединенных к сети, и выдает логический сигнал."
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT"
+msgid "Stored <link=\"POWER\">energy</link>"
+msgstr "Запасенная <link=\"POWER\">энергия</link>"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_ACTIVE
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_ACTIVE"
+msgid "Sends <b><style=\"logic_on\">Green Signal</style></b> until stored energy level increases to the high threshold"
+msgstr "Отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, пока уровень заряда не поднимется выше <b>верхнего порога</b>"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_INACTIVE
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_INACTIVE"
+msgid "Sends <b><style=\"logic_off\">Red Signal</style></b> until stored energy level reduces to the low threshold"
+msgstr "Отправляет <b><style=\"logic_off\">красный сигнал</style></b>, пока уровень заряда не опустится ниже <b>нижнего порога</b>"
+
+#. BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.NAME
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.NAME"
+msgid "Stored energy: {JoulesAvailable}/{JoulesCapacity}"
+msgstr "Энергия в сети: {JoulesAvailable}/{JoulesCapacity}"
+
+#. BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.TOOLTIP
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.TOOLTIP"
+msgid "Energy stored in all batteries connected to the network"
+msgstr "Энергия, хранящаяся во всех батареях, подключенных к этой сети"
