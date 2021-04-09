@@ -22,10 +22,13 @@ namespace BatteriesChargeSensor
         private float storedEnergy;
         private float maxStoredEnergy;
         private bool wasOn;
+        [MyCmpAdd] private CopyBuildingSettings copyBuildingSettings;
+        private static readonly EventSystem.IntraObjectHandler<BatteriesChargeSensor> OnCopySettingsDelegate = new EventSystem.IntraObjectHandler<BatteriesChargeSensor>((component, data) => component.OnCopySettings(data));
 
         protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
+            this.Subscribe<BatteriesChargeSensor>(-905833192, BatteriesChargeSensor.OnCopySettingsDelegate);
             StoredEnergyStatus = new StatusItem("STOREDENERGY_STATUS", "BUILDING", "", StatusItem.IconType.Info, NotificationType.Neutral, true, OverlayModes.Power.ID)
                 .SetResolveStringCallback((str, data) =>
                 {
@@ -34,6 +37,14 @@ namespace BatteriesChargeSensor
                     str = str.Replace("{JoulesCapacity}", GameUtil.GetFormattedJoules(sensor.maxStoredEnergy));
                     return str;
                 });
+        }
+
+        private void OnCopySettings(object data)
+        {
+            BatteriesChargeSensor component = ((GameObject)data).GetComponent<BatteriesChargeSensor>();
+            if (component == null) return;
+            activateValue = component.activateValue;
+            deactivateValue = component.deactivateValue;
         }
 
         protected override void OnSpawn()
