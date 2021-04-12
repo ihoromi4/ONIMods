@@ -8,7 +8,7 @@ namespace BatteriesChargeSensor
 	public class BatteriesChargeSensorConfig : IBuildingConfig
 	{
 		public const string ID = "BatteriesChargeSensor";
-		protected const string kanim = "wattage_sensor_kanim";
+		protected const string kanim = "batteries_charge_sensor_kanim";
 
 		public override BuildingDef CreateBuildingDef()
 		{
