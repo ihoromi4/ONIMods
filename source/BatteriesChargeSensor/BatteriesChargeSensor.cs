@@ -29,14 +29,17 @@ namespace BatteriesChargeSensor
         {
             base.OnPrefabInit();
             this.Subscribe<BatteriesChargeSensor>(-905833192, BatteriesChargeSensor.OnCopySettingsDelegate);
-            StoredEnergyStatus = new StatusItem("STOREDENERGY_STATUS", "BUILDING", "", StatusItem.IconType.Info, NotificationType.Neutral, true, OverlayModes.Power.ID)
-                .SetResolveStringCallback((str, data) =>
-                {
-                    BatteriesChargeSensor sensor = (BatteriesChargeSensor)data;
-                    str = str.Replace("{JoulesAvailable}", GameUtil.GetFormattedJoules(sensor.storedEnergy));
-                    str = str.Replace("{JoulesCapacity}", GameUtil.GetFormattedJoules(sensor.maxStoredEnergy));
-                    return str;
-                });
+            StoredEnergyStatus = Utils.CreateStatusItem("STOREDENERGY_STATUS", "BUILDING", "", StatusItem.IconType.Info, NotificationType.Neutral, true, OverlayModes.Power.ID);
+            StoredEnergyStatus?.SetResolveStringCallback(ResolveStringCallback);
+            if (StoredEnergyStatus == null) Debug.LogError($"{Utils.modInfo.assemblyName}: StoredEnergyStatus == null");
+        }
+
+        public string ResolveStringCallback(string str, object data)
+        {
+            BatteriesChargeSensor sensor = (BatteriesChargeSensor) data;
+            str = str.Replace("{JoulesAvailable}", GameUtil.GetFormattedJoules(sensor.storedEnergy));
+            str = str.Replace("{JoulesCapacity}", GameUtil.GetFormattedJoules(sensor.maxStoredEnergy));
+            return str;
         }
 
         private void OnCopySettings(object data)

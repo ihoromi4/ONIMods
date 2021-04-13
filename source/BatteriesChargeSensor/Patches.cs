@@ -2,8 +2,6 @@
 using System.IO;
 using System.Reflection;
 using Harmony;
-using CaiLib.Utils;
-using static CaiLib.Utils.BuildingUtils;
 
 namespace BatteriesChargeSensor
 {
@@ -22,7 +20,7 @@ namespace BatteriesChargeSensor
         {
             public static void Prefix()
             {
-                AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Automation, BatteriesChargeSensorConfig.ID);
+                Utils.AddBuildingToPlanScreen("Automation", BatteriesChargeSensorConfig.ID);
             }
         }
 
@@ -30,9 +28,9 @@ namespace BatteriesChargeSensor
         [HarmonyPatch("Initialize")]
         public static class Db_Initialize_Patch
         {
-            public static void Prefix()
+            public static void Postfix()
             {
-                AddBuildingToTechnology(GameStrings.Technology.Power.AdvancedPowerRegulation, BatteriesChargeSensorConfig.ID);
+                Utils.AddBuildingToTechnology("AdvancedPowerRegulation", BatteriesChargeSensorConfig.ID);
             }
         }
 
