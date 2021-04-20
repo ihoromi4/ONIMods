@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteriesChargeSensor", "Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "^CaiLib", "CaiLib\^CaiLib.csproj", "{2DED5B57-FD32-4F67-88B5-924AC4300952}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassiveGasVentInput", "PassiveGasVentInput\PassiveGasVentInput.csproj", "{313AD3F0-C132-4EC0-B5C9-C4486E9227BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioreactor", "Bioreactor\Bioreactor.csproj", "{E7F256BE-0706-4FD8-AD16-F13B9C94153D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{2DED5B57-FD32-4F67-88B5-924AC4300952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DED5B57-FD32-4F67-88B5-924AC4300952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DED5B57-FD32-4F67-88B5-924AC4300952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313AD3F0-C132-4EC0-B5C9-C4486E9227BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313AD3F0-C132-4EC0-B5C9-C4486E9227BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313AD3F0-C132-4EC0-B5C9-C4486E9227BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313AD3F0-C132-4EC0-B5C9-C4486E9227BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7F256BE-0706-4FD8-AD16-F13B9C94153D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F256BE-0706-4FD8-AD16-F13B9C94153D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F256BE-0706-4FD8-AD16-F13B9C94153D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F256BE-0706-4FD8-AD16-F13B9C94153D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
