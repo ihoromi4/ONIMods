@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.NAME
+msgctxt "PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.NAME"
+msgid "<link=\"PASSIVEGASVENTINPUT\">Gas Vent Input</link>"
+msgstr "<link=\"PASSIVEGASVENTINPUT\">被动式气体排放口泵入</link>"
+
+#. PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.EFFECT
+msgctxt "PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.EFFECT"
+msgid "Pumps <link=\"ELEMENTS_GAS\">gas</link> into <link=\"GASPIPING\">pipes</link> using high external pressure. Use to pump out excess gas."
+msgstr "使用外部的高气压将 <link=\"ELEMENTS_GAS\">气体</link> 泵入 <link=\"GASPIPING\">管道</link>，用于抽出多余的气体。"
+
+#. PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESC
+msgctxt "PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESC"
+msgid "Passively takes gas from the environment under a high pressure."
+msgstr "在高气压下被动地从环境中泵入气体。"
+
+#. PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_DESC
+msgctxt "PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_DESC"
+msgid "Pressure over {0}"
+msgstr "气压超过 {0}"
+
+#. PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_TOOLTIP
+msgctxt "PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_TOOLTIP"
+msgid "Building starts working when <style=\"KKeyword\">pressure</style> is greater than {0}"
+msgstr "当 <style=\"KKeyword\">气压</style> 大于 {0}时，建筑开始工作。"
+
+#. PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.DEP_PRESSURE_DESC
+msgctxt "PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.DEP_PRESSURE_DESC"
+msgid "Productivity depends on pressure"
+msgstr "泵送效率取决于外部气压"
+
+#. PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.DEP_PRESSURE_TOOLTIP
+msgctxt "PassiveGasVentInput.STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.DEP_PRESSURE_TOOLTIP"
+msgid "Productivity of the building increases by {0} every atm kg"
+msgstr "建筑的泵送效率外部气压每kg增加{0}"
