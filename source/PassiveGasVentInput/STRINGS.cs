@@ -24,10 +24,5 @@ namespace PassiveGasVentInput
 				}
 			}
 		}
-
-		public static void DoReplacement()
-		{
-			LocString.CreateLocStringKeys(typeof(STRINGS), "");
-		}
 	}
 }
