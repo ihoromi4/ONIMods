@@ -29,7 +29,7 @@ namespace BatteriesChargeSensor
         {
             base.OnPrefabInit();
             this.Subscribe<BatteriesChargeSensor>(-905833192, BatteriesChargeSensor.OnCopySettingsDelegate);
-            StoredEnergyStatus = Utils.CreateStatusItem("STOREDENERGY_STATUS", "BUILDING", "", StatusItem.IconType.Info, NotificationType.Neutral, true, OverlayModes.Power.ID);
+            StoredEnergyStatus = new StatusItem("STOREDENERGY_STATUS", "BUILDING", "", StatusItem.IconType.Info, NotificationType.Neutral, true, OverlayModes.Power.ID);
             StoredEnergyStatus?.SetResolveStringCallback(ResolveStringCallback);
             if (StoredEnergyStatus == null) Debug.LogError($"{Utils.modInfo.assemblyName}: StoredEnergyStatus == null");
         }

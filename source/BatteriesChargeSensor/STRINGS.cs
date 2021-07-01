@@ -33,10 +33,5 @@ namespace BatteriesChargeSensor
 				}
 			}
 		}
-
-		public static void DoReplacement()
-		{
-			LocString.CreateLocStringKeys(typeof(STRINGS), "");
-		}
 	}
 }
