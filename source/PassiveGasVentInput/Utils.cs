@@ -67,7 +67,6 @@ namespace PassiveGasVentInput
             string langDirectory = Path.Combine(rootDirectory, "translations");
 
             Localization.Locale locale = Localization.GetLocale();
-            Debug.LogWarning($"Locale: {locale.Code}");
 
             if (locale != null)
             {
