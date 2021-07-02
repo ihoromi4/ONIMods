@@ -67,7 +67,6 @@ namespace BatteriesChargeSensor
             string langDirectory = Path.Combine(rootDirectory, "translations");
 
             Localization.Locale locale = Localization.GetLocale();
-            Debug.Log($"Locale: {locale.Code}");
 
             if (locale != null)
             {

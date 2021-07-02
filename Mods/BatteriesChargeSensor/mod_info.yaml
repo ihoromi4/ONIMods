@@ -4,4 +4,4 @@ supportedContent: VANILLA_ID,EXPANSION1_ID
 minimumSupportedBuild: 469369
 staticID: BatteriesChargeSensor
 APIVersion: 2
-version: "1.4.0"
+version: "1.4.1"
