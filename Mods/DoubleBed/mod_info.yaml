@@ -1,0 +1,7 @@
+title: Double Bed
+description: Double Bed
+supportedContent: VANILLA_ID,EXPANSION1_ID
+minimumSupportedBuild: 469369
+staticID: DoubleBed
+APIVersion: 2
+version: "1.0.0"

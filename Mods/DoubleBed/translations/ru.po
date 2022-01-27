@@ -1,0 +1,17 @@
+#. DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.DESC
+msgctxt "DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.DESC"
+msgid "The more the merrier"
+msgstr "В тесноте, да не в обиде. "
+
+#. DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.EFFECT
+msgctxt "DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.EFFECT"
+msgid "Giwes two Duplicants a place to sleep.\n\nAt night, Duplicants will occupy an empty bed, and in the morning they will free it for other Duplicants."
+msgstr ""
+"Место сна для двух дубликантов.\n"
+"\n"
+"Ночью дубликанты займут свободную койку, а утром освободят ее для других дубликантов. "
+
+#. DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.NAME
+msgctxt "DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.NAME"
+msgid "<link=\"DOUBLEBED\">Double Bed</link>"
+msgstr "<link=\"DOUBLEBED\">Двухъярусная койка</link>"
