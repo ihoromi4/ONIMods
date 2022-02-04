@@ -1,0 +1,3 @@
+title: "Batteries Charge Sensor"
+description: "Mod adds a new kind of sensor. The sensor accounts the charge of all batteries connected to the power network."
+staticID: BatteriesChargeSensor

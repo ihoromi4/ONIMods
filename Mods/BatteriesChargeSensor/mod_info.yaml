@@ -1,7 +1,7 @@
-title: Batteries Charge Sensor
-description: Mod adds a new kind of sensor. The sensor accounts the charge of all batteries connected to the power network.
+#title: Batteries Charge Sensor
+#description: Mod adds a new kind of sensor. The sensor accounts the charge of all batteries connected to the power network.
 supportedContent: VANILLA_ID,EXPANSION1_ID
-minimumSupportedBuild: 469369
-staticID: BatteriesChargeSensor
+minimumSupportedBuild: 494396
+#staticID: BatteriesChargeSensor
 APIVersion: 2
-version: "1.4.1"
+version: "1.5.0"
