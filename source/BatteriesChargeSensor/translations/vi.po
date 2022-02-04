@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"X-Generator: Poedit 2.4.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.NAME
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.NAME"
+msgid "<link=\"BATTERIESCHARGESENSOR\">Batteries Charge Sensor</link>"
+msgstr "<link=\"BATTERIESCHARGESENSOR\">Cảm Biến Sạc Pin</link>"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.EFFECT
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.EFFECT"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> or <b><style=\"logic_off\">Red Signal</style></b> when the <link=\"POWER\">energy</link> stored in connected power network reaches specified value."
+msgstr "Gửi <b><style=\"logic_on\">Tính Hiệu Xanh</style></b> hoặc <b><style=\"logic_off\">Tín Hiệu Đỏ</style></b> khi <link=\"POWER\">Năng Lượng</link> đang lưu trữ trong mạng điện được kết nối đạt đến giá trị quy định."
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.DESC
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.DESC"
+msgid "Charge sensor measures the energy stored in all batteries connected to the power network and sends logical signal."
+msgstr "Cảm biến sạc đo năng lượng được lưu trữ trong tất cả các pin được kết nối với mạng điện và gửi tín hiệu logic."
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT"
+msgid "Stored <link=\"POWER\">energy</link>"
+msgstr "<link=\"POWER\">Năng Lượng</link> đã lưu trữ"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_ACTIVE
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_ACTIVE"
+msgid "Sends <b><style=\"logic_on\">Green Signal</style></b> until stored energy level increases to the high threshold"
+msgstr "Gửi <b><style=\"logic_on\">Tín Hiệu Xanh</style></b> cho đến khi mức năng lượng dự trữ tăng lên ngưỡng cao"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_INACTIVE
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_INACTIVE"
+msgid "Sends <b><style=\"logic_off\">Red Signal</style></b> until stored energy level reduces to the low threshold"
+msgstr "Gửi <b><style=\"logic_off\">Tín Hiệu Đỏ</style></b> cho đến khi mức năng lượng được lưu trữ giảm xuống ngưỡng thấp"
+
+#. BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.NAME
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.NAME"
+msgid "Stored energy: {JoulesAvailable}/{JoulesCapacity}"
+msgstr "Năng lượng được lưu trữ: {JoulesAvailable}/{JoulesCapacity}"
+
+#. BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.TOOLTIP
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.TOOLTIP"
+msgid "Energy stored in all batteries connected to the network"
+msgstr "Năng lượng được lưu trữ trong tất cả các pin được kết nối với mạng"
