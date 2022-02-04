@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.NAME
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.NAME"
+msgid "<link=\"BATTERIESCHARGESENSOR\">Batteries Charge Sensor</link>"
+msgstr "<link=\"BATTERIESCHARGESENSOR\">电网电力传感器</link>"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.EFFECT
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.EFFECT"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> or <b><style=\"logic_off\">Red Signal</style></b> when the <link=\"POWER\">energy</link> stored in connected power network reaches specified value."
+msgstr "当连接的电力网络中存储的<link=\"POWER\">电力</link>达到指定值时，发送一个<b><style=\"logic_on\">绿色信号</style></b>或<b><style=\"logic_off\">红色信号</style></b>。"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.DESC
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.DESC"
+msgid "Charge sensor measures the energy stored in all batteries connected to the power network and sends logical signal."
+msgstr "电网电力传感器测量连接到电力网络的所有电池中储存的电力，并发送逻辑信号。"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT"
+msgid "Stored <link=\"POWER\">energy</link>"
+msgstr "储存的<link=\"POWER\">电力</link>"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_ACTIVE
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_ACTIVE"
+msgid "Sends <b><style=\"logic_on\">Green Signal</style></b> until stored energy level increases to the high threshold"
+msgstr "发送<b><style=\"logic_on\">绿色信号</style></b>，直到存储的电力增加到高阈值。"
+
+#. BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_INACTIVE
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDINGS.PREFABS.BATTERIESCHARGESENSOR.LOGIC_PORT_INACTIVE"
+msgid "Sends <b><style=\"logic_off\">Red Signal</style></b> until stored energy level reduces to the low threshold"
+msgstr "发送<b><style=\"logic_off\">红色信号</style></b>，直到存储的电力降低到低阈值。"
+
+#. BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.NAME
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.NAME"
+msgid "Stored energy: {JoulesAvailable}/{JoulesCapacity}"
+msgstr "储存的电力:{JoulesAvailable}/{JoulesCapacity}"
+
+#. BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.TOOLTIP
+msgctxt "BatteriesChargeSensor.STRINGS.BUILDING.STATUSITEMS.STOREDENERGY_STATUS.TOOLTIP"
+msgid "Energy stored in all batteries connected to the network"
+msgstr "连接到电力网络中所有电池储存的电力"
