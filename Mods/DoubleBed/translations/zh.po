@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: Ventulus\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
+
+#. DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.DESC
+msgctxt "DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.DESC"
+msgid "The more the merrier"
+msgstr "越多越好"
+
+#. DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.EFFECT
+msgctxt "DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.EFFECT"
+msgid ""
+"Giwes two Duplicants a place to sleep.\n"
+"\n"
+"At night, Duplicants will occupy an empty bed, and in the morning they will "
+"free it for other Duplicants."
+msgstr ""
+"给两个复制人一个睡觉的地方。\n"
+"\n"
+"晚上，复制人将占据一张空床，早上他们将把床腾出来给其他复制人。"
+
+#. DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.NAME
+msgctxt "DoubleBed.STRINGS.BUILDINGS.PREFABS.DOUBLEBED.NAME"
+msgid "<link=\"DOUBLEBED\">Double Bed</link>"
+msgstr "<link=\"DOUBLEBED\">双层床</link>"
