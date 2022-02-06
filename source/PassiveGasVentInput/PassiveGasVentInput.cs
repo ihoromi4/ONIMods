@@ -13,9 +13,13 @@ namespace PassiveGasVentInput
         [MyCmpReq] private KBatchedAnimController animController;
         private Guid conduitBlockedStatusGuid;
         private Guid noElementStatusGuid;
+        private float CONSUMPTION_PER_PRESSURE_KG;
+        private PassiveGasVentInputSettings settings;
 
         protected override void OnSpawn()
         {
+            CONSUMPTION_PER_PRESSURE_KG = (PassiveGasVentInputSettings.Instance.MaximumFlow - PassiveGasVentInputSettings.Instance.MinimumFlow) / (PassiveGasVentInputSettings.Instance.MaximumPressure - PassiveGasVentInputSettings.Instance.MinimumPressure);
+            settings = PassiveGasVentInputSettings.Instance;
             smi.StartSM();
             this.dispenser.GetConduitManager().AddConduitUpdater(this.OnConduitUpdate, ConduitFlowPriority.LastPostUpdate);
         }
@@ -37,11 +41,11 @@ namespace PassiveGasVentInput
 
         public int Cell { get { return Grid.PosToCell(transform.GetPosition()); } }
 
-        public float Mass { get { return Grid.Mass[Cell]; } }
+        public float GasPressure { get { return Grid.Mass[Cell]; } }
 
         public bool IsGasInCell { get { return Grid.Element[Cell].IsState(Element.State.Gas); } }
 
-        public bool IsEnoughMass { get { return Grid.Mass[Cell] >= PassiveGasVentInputConfig.MIN_WORK_MASS; } }
+        public bool IsEnoughMass { get { return Grid.Mass[Cell] >= PassiveGasVentInputSettings.Instance.MinimumPressure; } }
 
         public void Sim1000ms(float dt)
         {
@@ -51,16 +55,28 @@ namespace PassiveGasVentInput
         public void UpdateConsumption(float dt)
         {
             UpdateConsumptionRate();
-            SetAnimSpeed(0.75f + 0.75f * consumer.consumptionRate);
+            SetAnimSpeed(0.75f + 0.75f * (consumer.consumptionRate / PassiveGasVentInputSettings.Instance.MaximumFlow));
         }
 
         private void UpdateConsumptionRate()
         {
             if (IsGasInCell & IsEnoughMass)
             {
-                float consumptionPerKg = (PassiveGasVentInputConfig.MID_PASS_MASS - PassiveGasVentInputConfig.MIN_PASS_MASS) / (PassiveGasVentInputConfig.MID_MASS - PassiveGasVentInputConfig.MIN_WORK_MASS);
-                float consumptionRate = PassiveGasVentInputConfig.MIN_PASS_MASS + (Mass - PassiveGasVentInputConfig.MIN_WORK_MASS) * consumptionPerKg;
-                consumer.consumptionRate = Mathf.Clamp(Mathf.Round(consumptionRate * 1000f) / 1000f, PassiveGasVentInputConfig.MIN_PASS_MASS, 1.0f);
+                // TODO: find another solution
+                // when stored gass mass > consumer.capacityKG consumer must be deactivated
+                // but consumer.capacityKG stored gas mass limitation doesn't work
+                // probably it's becouse consumer.elementToConsume didn't set
+                // and consumer cannot find out storage gas mass
+                // temporary we use the fix external to Consumer class
+                if (consumer.storage.MassStored() >= consumer.capacityKG)
+                {
+                    consumer.consumptionRate = 0f;
+                }
+                else
+                {
+                    float consumptionRate = settings.MinimumFlow + (GasPressure - settings.MinimumPressure) * CONSUMPTION_PER_PRESSURE_KG;
+                    consumer.consumptionRate = Mathf.Clamp(Mathf.Round(consumptionRate * 1000f) / 1000f, settings.MinimumFlow, settings.MaximumFlow);
+                }
                 consumer.RefreshConsumptionRate();
             }
         }
@@ -78,11 +94,11 @@ namespace PassiveGasVentInput
             List<Descriptor> descriptorList = new List<Descriptor>();
 
             Descriptor descriptor = new Descriptor();
-            descriptor.SetupDescriptor(string.Format(STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_DESC, GameUtil.GetFormattedMass(PassiveGasVentInputConfig.MIN_WORK_MASS)), string.Format(STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_TOOLTIP, GameUtil.GetFormattedMass(PassiveGasVentInputConfig.MIN_WORK_MASS)), Descriptor.DescriptorType.Effect);
+            descriptor.SetupDescriptor(string.Format(STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_DESC, GameUtil.GetFormattedMass(PassiveGasVentInputSettings.Instance.MinimumPressure)), string.Format(STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.REQ_PRESSURE_TOOLTIP, GameUtil.GetFormattedMass(PassiveGasVentInputSettings.Instance.MinimumPressure)), Descriptor.DescriptorType.Effect);
             descriptorList.Add(descriptor);
 
             descriptor = new Descriptor();
-            float consumptionPerKg = (PassiveGasVentInputConfig.MID_PASS_MASS - PassiveGasVentInputConfig.MIN_PASS_MASS) / (PassiveGasVentInputConfig.MID_MASS - PassiveGasVentInputConfig.MIN_WORK_MASS);
+            float consumptionPerKg = (PassiveGasVentInputSettings.Instance.MaximumFlow - PassiveGasVentInputSettings.Instance.MinimumFlow) / (PassiveGasVentInputSettings.Instance.MaximumPressure - PassiveGasVentInputSettings.Instance.MinimumPressure);
             descriptor.SetupDescriptor(STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.DEP_PRESSURE_DESC, string.Format(STRINGS.BUILDINGS.PREFABS.PASSIVEGASVENTINPUT.DESCRIPTORS.DEP_PRESSURE_TOOLTIP, GameUtil.GetFormattedMass(consumptionPerKg)), Descriptor.DescriptorType.Effect);
             descriptorList.Add(descriptor);
 

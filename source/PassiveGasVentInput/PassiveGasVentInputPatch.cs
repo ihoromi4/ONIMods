@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using HarmonyLib;
+﻿using HarmonyLib;
 using PeterHan.PLib.Core;
 using PeterHan.PLib.Options;
 
@@ -10,7 +7,6 @@ namespace PassiveGasVentInput
     public class PassiveGasVentInputPatch : KMod.UserMod2
     {
         internal static readonly PassiveGasVentInputSettings DefaultSettings = new PassiveGasVentInputSettings();
-
         internal POptions Options { get; private set; }
 
         public override void OnLoad(Harmony harmony)

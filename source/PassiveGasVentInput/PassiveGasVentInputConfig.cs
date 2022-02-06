@@ -8,10 +8,6 @@ namespace PassiveGasVentInput
     {
         public const string ID = "PassiveGasVentInput";
 		protected const string kanim = "passive_gas_vent_input_kanim";
-		public const float MIN_WORK_MASS = 2f;
-		public const float MIN_PASS_MASS = 0.001f;
-		public const float MID_MASS = 20f;
-		public const float MID_PASS_MASS = 0.1f;
 
 		public override BuildingDef CreateBuildingDef()
 		{
@@ -53,14 +49,13 @@ namespace PassiveGasVentInput
 			go.GetComponent<KBatchedAnimController>().initialAnim = "on";
 
 			Storage storage = go.AddOrGet<Storage>();
-			storage.capacityKg = 1f;
 
 			var elementConsumer = go.AddOrGet<ElementConsumer>();
 			elementConsumer.showDescriptor = false;
 			elementConsumer.configuration = ElementConsumer.Configuration.AllGas;
-			elementConsumer.capacityKG = 1f;
-			elementConsumer.consumptionRate = 1f;
-			elementConsumer.storeOnConsume = true;
+			elementConsumer.capacityKG = PassiveGasVentInputSettings.Instance.MaximumFlow;
+			elementConsumer.consumptionRate = PassiveGasVentInputSettings.Instance.MinimumFlow;
+			elementConsumer.storeOnConsume = true;  // true otherwise removes gas
 			elementConsumer.showInStatusPanel = false;
 			elementConsumer.consumptionRadius = 1;
 
