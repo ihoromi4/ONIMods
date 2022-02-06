@@ -49,19 +49,33 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PLib, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PLib.4.7.0\lib\net471\PLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
     <Reference Include="UnityEngine">
       <HintPath>..\lib\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\lib\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\KSPModding\KSPMods\lib_1_11_2\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\KSPModding\KSPMods\lib_1_11_2\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\lib\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PassiveGasVentInput.cs" />
     <Compile Include="PassiveGasVentInputConfig.cs" />
     <Compile Include="PassiveGasVentInputPatch.cs" />
+    <Compile Include="PassiveGasVentInputSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="STRINGS.cs" />
     <Compile Include="Utils.cs" />
@@ -72,7 +86,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo F | xcopy /Y /S /R /Q "$(TargetDir)$(TargetName).dll" "$(SolutionDir)..\Mods\$(TargetName)\$(TargetName).dll"
+    <PostBuildEvent>"$(ILMergeConsolePath)" /ndebug /out:$(TargetName)Merged.dll $(TargetName).dll PLib.dll /targetplatform:v4,C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+
+echo F | xcopy /Y /S /R /Q "$(TargetDir)$(TargetName)Merged.dll" "$(SolutionDir)..\Mods\$(TargetName)\$(TargetName).dll"
 
 xcopy /Y /R  /I /Q  /E "$(SolutionDir)..\Mods\$(TargetName)" "C:\Users\$(Username)\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)"</PostBuildEvent>
   </PropertyGroup>
