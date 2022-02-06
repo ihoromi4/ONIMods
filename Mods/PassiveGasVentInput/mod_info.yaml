@@ -1,7 +1,4 @@
-title: Passive Gas Vent Input
-description: Mod adds a new building Gas Vent Input. Gas Vent Input works like a pump but without electricity.
 supportedContent: VANILLA_ID,EXPANSION1_ID
-minimumSupportedBuild: 469369
-staticID: PassiveGasVentInput
+minimumSupportedBuild: 494396
 APIVersion: 2
-version: "1.2.1"
+version: "1.3.0"
