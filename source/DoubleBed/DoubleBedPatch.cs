@@ -19,7 +19,7 @@ namespace DoubleBed
         {
             public static void Prefix()
             {
-                Utils.AddBuildingToPlanScreen("Furniture", DoubleBedConfig.ID, 1);
+                ModUtil.AddBuildingToPlanScreen("Furniture", DoubleBedConfig.ID, "uncategorized", "Bed");
             }
         }
 

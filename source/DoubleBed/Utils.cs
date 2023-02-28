@@ -1,9 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-//using System.Collections.Generic;
-//using HarmonyLib;
-//using Database;
 using TUNING;
 
 namespace DoubleBed
@@ -52,13 +49,13 @@ namespace DoubleBed
                 Debug.LogWarning($"{Utils.modInfo.assemblyName}: Could not find '{techId}' tech.");
         }
 
-        public static void AddBuildingToPlanScreen(HashedString category, string building_id, int place)
-        {
-            int index = BUILDINGS.PLANORDER.FindIndex((Predicate<PlanScreen.PlanInfo>)(x => x.category == category));
-            if (index < 0)
-                return;
-            BUILDINGS.PLANORDER[index].data.Insert(place, building_id);
-        }
+        //public static void AddBuildingToPlanScreen(HashedString category, string building_id, int place)
+        //{
+        //    int index = BUILDINGS.PLANORDER.FindIndex((Predicate<PlanScreen.PlanInfo>)(x => x.category == category));
+        //    if (index < 0)
+        //        return;
+        //    BUILDINGS.PLANORDER[index].data.Insert(place, building_id);
+        //}
 
         public static void Localize(Type root)
         {

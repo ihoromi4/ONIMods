@@ -38,7 +38,7 @@ namespace DoubleBed
             sleepables = new Sleepable[choreOffset.Length];
             for(int i = 0; i < choreOffset.Length; i++)
             {
-                GameObject locator = ChoreHelpers.CreateSleepLocator(Grid.CellToPosCBC(Grid.PosToCell(this), Grid.SceneLayer.Move) + choreOffset[i]);
+                GameObject locator = ChoreHelpers.CreateSleepLocator(Grid.CellToPosCBC(Grid.PosToCell(this), Grid.SceneLayer.BuildingUse) + choreOffset[i]);
                 Building building = locator.AddOrGet<Building>();
                 building.Def = BuildingTemplates.CreateBuildingDef(DoubleBedConfig.ID, 2, 1, "bedlg_kanim", 10, 10f, BUILDINGS.CONSTRUCTION_MASS_KG.TIER3, MATERIALS.RAW_MINERALS, 1600f, BuildLocationRule.OnFloor, BUILDINGS.DECOR.NONE, NOISE_POLLUTION.NONE);
                 //building.Def = DoubleBedConfig.CreateBuildingDef();
@@ -53,8 +53,8 @@ namespace DoubleBed
                 {
                     Assets.GetAnim("anim_sleep_bed_kanim")
                 };
-                sleepable.workLayer = Grid.SceneLayer.BuildingFront;
-                sleepable.OnWorkableEventCB += (evt => OnWorkableEvent(sleepable, evt));
+                sleepable.workLayer = Grid.SceneLayer.Building;
+                sleepable.OnWorkableEventCB += ((workable, evt) => OnWorkableEvent(sleepable, evt));
 
                 Ownable ownable = locator.AddOrGet<Ownable>();
                 ownable.slotID = Db.Get().AssignableSlots.Bed.Id;
