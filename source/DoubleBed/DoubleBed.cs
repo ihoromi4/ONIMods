@@ -53,14 +53,14 @@ namespace DoubleBed
                 {
                     Assets.GetAnim("anim_sleep_bed_kanim")
                 };
-                sleepable.workLayer = Grid.SceneLayer.Building;
-                sleepable.OnWorkableEventCB += ((workable, evt) => OnWorkableEvent(sleepable, evt));
+                sleepable.workLayer = Grid.SceneLayer.BuildingFront;
+                int bed_id = i;  // do not delete: line saves value of i var in loop iteration closure
+                sleepable.OnWorkableEventCB += (workable, evt) => OnWorkableEvent(sleepable, evt, bed_id);
 
                 Ownable ownable = locator.AddOrGet<Ownable>();
                 ownable.slotID = Db.Get().AssignableSlots.Bed.Id;
 
                 DoubleBedDummy dummy = locator.AddOrGet<DoubleBedDummy>();
-                sleepable.AnimOffset = animOffset[i];
 
                 locator.AddOrGet<KPrefabID>();
 
@@ -89,17 +89,26 @@ namespace DoubleBed
             Grid.HasLadder[cell] = flag;
         }
 
-        private void OnWorkableEvent(Sleepable sleepable, Workable.WorkableEvent workable_event)
+        private void OnWorkableEvent(Sleepable sleepable, Workable.WorkableEvent workable_event, int bed_id)
         {
-            if (workable_event == Workable.WorkableEvent.WorkStarted)
+            switch (workable_event)
             {
-                AddEffects(sleepable.worker);
+                case Workable.WorkableEvent.WorkStarted:
+                    AddEffects(sleepable.worker);
+                    UpdateOffset(sleepable.worker, animOffset[bed_id]);
+                    break;
+                case Workable.WorkableEvent.WorkStopped:
+                    RemoveEffects(sleepable.worker);
+                    UpdateOffset(sleepable.worker, -animOffset[bed_id]);
+                    Debug.Log("Double Bed Unassign");
+                    break;
             }
-            else if (workable_event == Workable.WorkableEvent.WorkStopped)
-            {
-                RemoveEffects(sleepable.worker);
-                Debug.Log("Double Bed Unassign");
-            }
+        }
+
+        private void UpdateOffset(Worker worker, Vector3 offset)
+        {
+            KBatchedAnimController animController = worker.GetComponent<KBatchedAnimController>();
+            animController.Offset += offset;
         }
 
         private void AddEffects(Worker worker)

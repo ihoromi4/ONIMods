@@ -41,16 +41,6 @@ namespace DoubleBed
             }
         }
 
-        [HarmonyPatch(typeof(Workable), nameof(Workable.GetWorkOffset))]
-        class WorkablePatch
-        {
-            public static bool Prefix(Workable __instance, ref Vector3 __result)
-            {
-                __result = __instance.AnimOffset;
-                return false;
-            }
-        }
-
         [HarmonyPatch(typeof(SleepChore.States), nameof(SleepChore.States.InitializeStates))]
         public static class SleepChorePatch
         {
